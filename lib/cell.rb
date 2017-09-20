@@ -7,4 +7,20 @@ class Cell
     @y_axis = y_axis
     @alive = false
   end
+
+  def alive?
+    alive
+  end
+
+  def dead?
+    !alive
+  end
+
+  def die!
+    @alive = false
+  end
+
+  def revive!
+    @alive = true
+  end
 end
