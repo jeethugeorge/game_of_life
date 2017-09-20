@@ -157,20 +157,21 @@ describe "the game of life" do
       end
     end
 
-    context "Rule 3: Live cell with more than 3 live neighbour dies" do
+    context "Rule 3: over crowded" do
 
-      it "should keep live cell with 2 neighbours" do
+      it "should die live cells having more than 3 live neighbour cells" do
         game = Game.new(world,[[0,1],[1,1],[1,2],[2,1],[2,2]])
         game.next_life_span!
         expect(game.world.cell_grid[1][1]).to be_dead
       end
     end
-    context "Rule 4: Live cell with 2 or 3 neighbours revive" do
+    context "Rule 4: reproduction" do
 
-      it "should keep live cell with 2 neighbours" do
+      it "dead cell with exactly 3 live neighbour will be live" do
         game = Game.new(world,[[0,1],[1,1],[1,2],[2,1],[2,2]])
         game.next_life_span!
         expect(game.world.cell_grid[0][2]).to be_alive
+        expect(game.world.cell_grid[0][0]).to be_dead
       end
     end
   end
