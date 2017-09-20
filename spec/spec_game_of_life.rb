@@ -2,9 +2,6 @@
 require 'rspec'
 
 require_relative '../lib/game'
-require_relative '../lib/world'
-require_relative '../lib/cell'
-
 
 describe "the game of life" do
 

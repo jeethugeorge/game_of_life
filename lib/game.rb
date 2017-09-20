@@ -1,5 +1,8 @@
 #class to access from outside and control other classes
 class Game
+  require_relative 'world'
+  require_relative 'cell'
+
   attr_accessor :world
 
   def initialize(world=World.new,seeds=[])
